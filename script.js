@@ -163,7 +163,7 @@ const chapters = [
         gallery: null,
 
         narrative: [
-            "Fanyzinha vs. O Defensor Oficial do Cabelão Mais Lindo e Sexy.",
+            "Fanyzinha vs. O Defensor Oficial do Cabelão Lindo e Sexy.",
             "Meritíssima...",
             "a defesa gostaria de registrar que:",
             "existe um patrimônio nacional ameaçado.",
@@ -285,7 +285,7 @@ function showAchievement(text) {
 
     setTimeout(() => {
         achievementBox.hidden = true;
-    }, 2500);
+    }, 4500);
 }
 
 async function typeNarrative(lines) {
@@ -384,7 +384,7 @@ function answerQuestion(answerIndex) {
 
         playChapter();
 
-    }, 1800);
+    }, 4200);
 }
 
 async function playGallery(images) {
@@ -422,12 +422,14 @@ async function playChapter() {
 
         showPhoto(chapter.photo);
     }
-
     await typeNarrative(chapter.narrative);
 
     if (chapter.gallery) {
 
         await playGallery(chapter.gallery);
+
+        // tempo para apreciar a última foto
+        await sleep(5000);
     }
 
     if (chapter.question) {
@@ -436,20 +438,23 @@ async function playChapter() {
 
     } else {
 
+        // pausa dramática antes do final
+        await sleep(3000);
+
         currentChapter++;
 
         showEnding();
     }
+
 }
 
 function showGameOver() {
 
-    introScreen.hidden = false;
+    introScreen.hidden = true;
 
     gameContainer.hidden = true;
 
     gameOverScreen.hidden = false;
-
 
 
     gameOverScreen.innerHTML = `
@@ -530,8 +535,6 @@ function showEnding() {
 
     endingHTML += `
         <h3>Recompensas desbloqueadas</h3>
-
-        <p>🌹 Uma rosa</p>
 
         <p>🍫 Chocolate</p>
 
@@ -641,6 +644,9 @@ startButton.addEventListener("click", () => {
 
     window.open(spotifyLink, "_blank");
 
+
+    gameOverScreen.hidden = true;
+
     introScreen.hidden = true;
 
     hud.hidden = false;
@@ -655,6 +661,8 @@ startButton.addEventListener("click", () => {
 
     playChapter();
 });
+
+hud.hidden = true;
 
 updateHUD();
 
