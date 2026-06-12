@@ -40,6 +40,8 @@ const progressElement = document.getElementById("progress");
 
 const startButton = document.getElementById("start-btn");
 
+const hud = document.getElementById("hud");
+
 // ===============================
 // Dados dos capítulos
 // ===============================
@@ -608,7 +610,7 @@ function showEnding() {
 }
 
 function createHearts() {
-    
+
     setTimeout(() => {
         effectsContainer.innerHTML = "";
     }, 12000);
@@ -640,6 +642,8 @@ startButton.addEventListener("click", () => {
     window.open(spotifyLink, "_blank");
 
     introScreen.hidden = true;
+
+    hud.hidden = false;
 
     gameContainer.hidden = false;
 
