@@ -1,1 +1,93 @@
-<h1>Missão Fanyzinha Cinematográfica ❤️</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Fanyzinha ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="hud">
+        <div id="lives"></div>
+        <div id="progress"></div>
+    </header>
+
+
+    <section id="intro-screen">
+
+        <h1>❤️ Missão Fanyzinha ❤️</h1>
+
+        <p>
+            Olá, Fanyzinha.
+        </p>
+
+        <p>
+            Você foi convocada para uma investigação extremamente importante.
+        </p>
+
+        <p>
+            Objetivo:
+            descobrir se tudo isso foi apenas coincidência...
+            ou se o universo estava insistindo um pouquinho demais.
+        </p>
+
+        <p>
+            Tempo estimado:
+            aproximadamente 6 minutos.
+        </p>
+
+        <p>
+            Porque algumas histórias merecem ser contadas com calma.
+        </p>
+
+        <br>
+
+        <p>
+            🛼 6 capítulos.<br>
+            ❤️ 6 meses.<br>
+            ✨ 1 história que talvez o universo tenha demorado demais para começar.
+        </p>
+
+        <br>
+
+        <button id="start-btn">
+            ▶ Iniciar Missão
+        </button>
+
+    </section>
+
+
+
+    <main id="game-container">
+
+        <div id="story-text"></div>
+
+        <div id="photo-container" hidden>
+            <img id="chapter-photo" alt="Foto da missão">
+        </div>
+
+        <div id="question-container"></div>
+
+        <div id="achievement" hidden></div>
+
+    </main>
+
+    <section id="game-over" hidden>
+
+    </section>
+
+    <section id="ending-screen" hidden>
+
+    </section>
+
+    <div id="effects-container"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
