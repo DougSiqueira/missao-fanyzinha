@@ -56,6 +56,10 @@ body {
     z-index: 1000;
 }
 
+#hud[hidden] {
+    display: none !important;
+}
+
 #lives {
     font-size: 1.1rem;
     font-weight: bold;
@@ -243,7 +247,7 @@ button:active {
     font-weight: bold;
     text-align: center;
     line-height: 1.5;
-    animation: achievementPop 0.4s ease;
+    animation: achievementPop 0.45s ease;
 }
 #achievement[hidden] {
     display: none !important;
@@ -259,6 +263,8 @@ button:active {
     background: rgba(0, 0, 0, 0.35);
 
     z-index: -1;
+
+    pointer-events: none;
 }
 
 /* ===============================
