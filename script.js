@@ -603,7 +603,7 @@ function createHearts() {
 
         heart.style.animationDelay =
             Math.random() * 4 + "s";
-
+ß
         heart.style.fontSize =
             (18 + Math.random() * 18) + "px";
 
@@ -615,6 +615,7 @@ startButton.addEventListener("click", () => {
 
     window.open(spotifyLink, "_blank");
 
+    registrarAcesso();
 
     gameOverScreen.hidden = true;
 
@@ -647,3 +648,28 @@ gameOverScreen.hidden = true;
 
 endingScreen.hidden = true;
 
+// ===============================
+// REGISTRO DE ACESSO
+// ===============================
+
+function registrarAcesso() {
+
+    fetch("https://script.google.com/macros/s/AKfycbwzk7UzXohPpBAjWC-FJyen5sVtYouYFEF4MWHb5AjiNToj2KyBKIJ27tVRBXKC9nKh/exec", {
+
+        method: "POST",
+
+        body: JSON.stringify({
+
+            timestamp: new Date().toLocaleString("pt-BR"),
+
+            device: /Mobi|Android/i.test(navigator.userAgent)
+                ? "Celular"
+                : "Computador",
+
+            browser: navigator.userAgent
+
+        })
+
+    }).catch(() => { });
+
+}
