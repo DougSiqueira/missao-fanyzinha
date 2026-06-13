@@ -279,11 +279,15 @@ function updateHUD() {
 }
 
 function showAchievement(text) {
-
     achievementBox.hidden = false;
-
-    achievementBox.textContent = text;
-
+    achievementBox.innerHTML = `
+        <div style="opacity: 0.8; font-size: 0.9rem;">
+            🏆 Conquista desbloqueada!
+        </div>
+        <div style="margin-top: 8px;">
+            ${text}
+        </div>
+    `;
     setTimeout(() => {
         achievementBox.hidden = true;
     }, 4500);
