@@ -509,70 +509,58 @@ function showGameOver() {
 }
 
 function showEnding() {
-
     gameContainer.hidden = true;
-
-    endingScreen.hidden = false;
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
     let endingHTML = `
         <h2>✨ Investigação Concluída ✨</h2>
     `;
-
     if (lives === 3) {
-
         endingHTML += `
             <h3>🎖️ Final Verdadeiro desbloqueado</h3>
-
             <p>
                 Como prêmio pela excelente memória...
             </p>
-
             <p>
                 Você ganhou sessões ilimitadas
                 de terapia comigo.
             </p>
-
             <p>
                 (Inclui risadas, abraços
                 e possibilidade de beijo no final.)
             </p>
         `;
     }
-
     endingHTML += `
-        <h3>Recompensas desbloqueadas</h3>
-
+        <h3>🎁 Recompensas desbloqueadas</h3>
         <p>🍫 Chocolate</p>
-
         <p>💌 Um encontro à sua escolha</p>
-
         <p>🛼 Novos rolês</p>
-
         <p>❤️ Continuação da nossa história</p>
+        <hr>
+        <p>
+            Obrigado por aceitar essa missão, investigadora.
+        </p>
+        <br>
+        <img
+            src="images/figurinha.jpg"
+            alt="Esse é o meu sorriso"
+            style="max-width:250px;border-radius:16px;"
+        >
+        <h3>
+            "Esse é o meu sorriso."
+        </h3>
+        <h2>
+            Continua... ❤️
+        </h2>
     `;
-
-    endingHTML += `
-    <hr>
-    <p>
-        Obrigado por aceitar essa missão, investigadora.
-    </p>
-    <br>
-    <img
-        src="images/figurinha.jpg"
-        alt="Esse é o meu sorriso"
-        style="max-width:250px;border-radius:16px;"
-    >
-    <h3>
-        "Esse é o meu sorriso."
-    </h3>
-    <h2>
-        Continua... ❤️
-    </h2>
-`;
-
-    endingScreen.innerHTML = endingHTML;
-
-    createHearts();
+    setTimeout(() => {
+        endingScreen.hidden = false;
+        endingScreen.innerHTML = endingHTML;
+        createHearts();
+    }, 800);
 }
 
 function createHearts() {
