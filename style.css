@@ -221,20 +221,21 @@ button:active {
 ================================= */
 
 #achievement {
-    margin: 30px auto;
-
-    max-width: 500px;
-
-    padding: 18px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255,215,0,0.12);
-
-    border: 1px solid rgba(255,215,0,0.35);
-
-    animation: fadeIn 0.5s ease;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    max-width: 85%;
+    padding: 22px 28px;
+    border-radius: 22px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    box-shadow:
+        0 0 30px rgba(255, 215, 0, 0.35);
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: achievementPop 0.4s ease;
 }
 
 /* ===============================
@@ -332,3 +333,14 @@ button:active {
     }
 }
 
+
+@keyframes achievementPop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
