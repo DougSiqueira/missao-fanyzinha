@@ -163,7 +163,7 @@ const chapters = [
         gallery: null,
 
         narrative: [
-            "Fanyzinha vs. O Defensor Oficial do Cabelão Lindo e Sexy.",
+            "Fanyzinha vs. O Defensor Oficial do Cabelão Lindo e Sexy. ",
             "Meritíssima...",
             "a defesa gostaria de registrar que:",
             "existe um patrimônio nacional ameaçado.",
