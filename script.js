@@ -564,13 +564,17 @@ function showEnding() {
         </p>
         <br>
         <img
-            src="images/figurinha.jpg"
-            alt="Esse é o meu sorriso"
-            style="max-width:250px;border-radius:16px;"
+            src="images/show-recorte.png"
+            alt="Nós dois"
+            style="max-width:250px;"
         >
+
         <h3>
-            "Esse é o meu sorriso."
+            "E pensar que tudo começou
+            com dois patinadores desencontrados."
         </h3>
+
+
         <h2>
             Continua... ❤️
         </h2>
