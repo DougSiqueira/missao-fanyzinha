@@ -278,6 +278,12 @@ button:active {
     margin: 60px auto;
 
     padding: 30px;
+
+    background: rgba(20,20,20,0.5);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(6px);
 }
 
 #game-over h2,
@@ -297,6 +303,8 @@ button:active {
     inset: 0;
 
     overflow: hidden;
+
+    z-index: 99999;
 }
 
 .floating-heart {
