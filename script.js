@@ -214,7 +214,7 @@ const chapters = [
         question: {
             text: "O sorriso da Fanyzinha é:",
             options: [
-                "Muito bonito",
+                "Muito engraçado",
                 "O mais bonito do mundo",
                 "Perigoso para o mau humor"
             ],
