@@ -112,7 +112,7 @@ const chapters = [
             text: "A vida ainda não tinha decidido:",
             options: [
                 "Nossa hora",
-                "Quem pagaria o estacionamento",
+                "Quem seria o personal do outro",
                 "Quem cairia primeiro no patins"
             ],
             correct: 0
