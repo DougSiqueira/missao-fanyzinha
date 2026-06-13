@@ -552,66 +552,23 @@ function showEnding() {
     `;
 
     endingHTML += `
-        <hr>
-
-        <p>Vieram os rolês.</p>
-
-        <p>Vieram as sessões de terapia.</p>
-
-        <p>Vieram os boa noiteeee.</p>
-
-        <p>Vieram os bom diaaaa.</p>
-
-        <p>
-            Vieram aventuras embaixo de tempestades,
-            só para ouvir uma música que valia a pena.
-        </p>
-
-        <p>Vieram os treinos.</p>
-
-        <p>Vieram as comemorações.</p>
-
-        <p>Vieram os olhos lindos.</p>
-
-        <p>Veio o sorriso mais bonito do mundo.</p>
-
-        <p>
-            E o fato de você ainda não ter cortado
-            esse cabelo lindo.
-        </p>
-
-        <p>
-            Obrigado por isso.
-        </p>
-
-        <p>
-            Obrigado por esses 6 meses, Fanyzinha.
-        </p>
-
-        <p>
-            Feliz Dia dos Namorados.
-        </p>
-
-        <p>
-            Mesmo que a gente tenha que fingir que não é.
-        </p>
-
-        <br>
-
-        <img
-            src="images/figurinha.jpg"
-            alt="Esse é o meu sorriso"
-            style="max-width:250px;border-radius:16px;"
-        >
-
-        <h3>
-            "Esse é o meu sorriso."
-        </h3>
-
-        <h2>
-            Continua... ❤️
-        </h2>
-    `;
+    <hr>
+    <p>
+        Obrigado por aceitar essa missão, investigadora.
+    </p>
+    <br>
+    <img
+        src="images/figurinha.jpg"
+        alt="Esse é o meu sorriso"
+        style="max-width:250px;border-radius:16px;"
+    >
+    <h3>
+        "Esse é o meu sorriso."
+    </h3>
+    <h2>
+        Continua... ❤️
+    </h2>
+`;
 
     endingScreen.innerHTML = endingHTML;
 
