@@ -9,6 +9,7 @@ const spotifyLink =
 
 let currentChapter = 0;
 let lives = 3;
+let isTransitioning = false;
 
 // ===============================
 // Elementos do HTML
@@ -357,33 +358,34 @@ function renderQuestion(question) {
 }
 
 function answerQuestion(answerIndex) {
-
+    // Impede múltiplos cliques
+    if (isTransitioning) {
+        return;
+    }
+    isTransitioning = true;
+    // Desabilita todos os botões
+    document
+        .querySelectorAll(".answer-btn")
+        .forEach(button => {
+            button.disabled = true;
+        });
     const chapter = chapters[currentChapter];
-
     if (answerIndex !== chapter.question.correct) {
-
         lives--;
-
         updateHUD();
-
         if (lives <= 0) {
-
+            isTransitioning = false;
             showGameOver();
-
             return;
         }
     }
-
     if (answerIndex === chapter.question.correct) {
         showAchievement(chapter.achievement);
     }
-
     currentChapter++;
-
     setTimeout(() => {
-
+        isTransitioning = false;
         playChapter();
-
     }, 4200);
 }
 
