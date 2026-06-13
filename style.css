@@ -8,20 +8,19 @@
 }
 
 body {
+    font-family: 'Fredoka', sans-serif;
     margin: 0;
     padding: 0;
     background:
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             #141414,
-            #0d0d0d
-        );
+            #0d0d0d);
 
     color: #ffffff;
 
-    font-family: "Trebuchet MS",
-                 Arial,
-                 sans-serif;
+    font-family: "Trebuchet MS", "Verdana", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 
     min-height: 100vh;
 
@@ -47,11 +46,11 @@ body {
 
     padding: 14px 20px;
 
-    background: rgba(20,20,20,0.95);
+    background: rgba(20, 20, 20, 0.95);
 
     backdrop-filter: blur(8px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     z-index: 1000;
 }
@@ -83,11 +82,14 @@ body {
 
 #intro-screen h1 {
     font-size: 2.8rem;
-
     margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(255, 80, 80, 0.4);
 
-    text-shadow:
-        0 0 12px rgba(255,80,80,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 #intro-screen p {
@@ -148,10 +150,10 @@ body {
 
     border-radius: 22px;
 
-    border: 3px solid rgba(255,255,255,0.08);
+    border: 3px solid rgba(255, 255, 255, 0.08);
 
     box-shadow:
-    0 12px 35px rgba(0,0,0,0.45);
+        0 12px 35px rgba(0, 0, 0, 0.45);
 
     transition: transform 0.4s ease;
 
@@ -191,11 +193,9 @@ button {
     color: white;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #d63f3f,
-            #a52828
-        );
+            #a52828);
 
     border: none;
 
@@ -211,7 +211,7 @@ button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 10px 25px rgba(214,63,63,0.35);
+        0 10px 25px rgba(214, 63, 63, 0.35);
 }
 
 .answer-btn:active,
@@ -249,6 +249,7 @@ button:active {
     line-height: 1.5;
     animation: achievementPop 0.45s ease;
 }
+
 #achievement[hidden] {
     display: none !important;
 }
@@ -279,7 +280,7 @@ button:active {
 
     padding: 30px;
 
-    background: rgba(20,20,20,0.5);
+    background: rgba(20, 20, 20, 0.5);
 
     border-radius: 24px;
 
@@ -351,7 +352,7 @@ button:active {
 ================================= */
 
 @media (max-width: 600px) {
-    
+
     #achievement {
         width: 90%;
         font-size: 1rem;
@@ -381,6 +382,7 @@ button:active {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.7);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
