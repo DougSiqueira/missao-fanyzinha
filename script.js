@@ -231,9 +231,9 @@ const chapters = [
 
         gallery: [
             "images/lago.jpg",
-            "images/show.jpg",
+            "images/aniversario.jpg",
             "images/academia.jpg",
-            "images/aniversario.jpg"
+            "images/show.jpg",
         ],
 
         narrative: [
@@ -436,7 +436,7 @@ async function playChapter() {
     await typeNarrative(chapter.narrative);
 
     // tempo para absorver o último text
-    await sleep(2000);
+    await sleep(5000);
 
     if (chapter.gallery) {
 
