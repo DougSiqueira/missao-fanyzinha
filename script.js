@@ -429,7 +429,10 @@ async function playChapter() {
         showPhoto(chapter.photo);
     }
     await typeNarrative(chapter.narrative);
-
+   
+     // tempo para absorver o último text
+    await sleep(2000);
+    
     if (chapter.gallery) {
 
         await playGallery(chapter.gallery);
@@ -510,6 +513,9 @@ function showGameOver() {
 
 function showEnding() {
     gameContainer.hidden = true;
+    
+    endingScreen.innerHTML = "";
+    
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -539,6 +545,14 @@ function showEnding() {
         <p>💌 Um encontro à sua escolha</p>
         <p>🛼 Novos rolês</p>
         <p>❤️ Continuação da nossa história</p>
+    
+    `;
+    setTimeout(() => {
+        endingScreen.hidden = false;
+endingScreen.innerHTML = endingHTML;
+createHearts();
+setTimeout(() => {
+    endingScreen.innerHTML += `
         <hr>
         <p>
             Obrigado por aceitar essa missão, investigadora.
@@ -556,10 +570,7 @@ function showEnding() {
             Continua... ❤️
         </h2>
     `;
-    setTimeout(() => {
-        endingScreen.hidden = false;
-        endingScreen.innerHTML = endingHTML;
-        createHearts();
+}, 6000);
     }, 800);
 }
 
