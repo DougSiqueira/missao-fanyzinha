@@ -239,15 +239,15 @@ const chapters = [
         narrative: [
             "Vieram os rolês.",
             "Vieram as sessões de terapia.",
-       “Vieram os boa noiteeee.”,
-“Vieram os bom diaaaa.”,
-“Vieram os episódios de The Seven Deadly Sins.”,
-“Vieram as críticas ao anime.”,
-“Vieram os comentários durante os episódios.”,
-“E, curiosamente…”,
-“vieram os episódios seguintes também.”,
-“Vieram aventuras embaixo de tempestades.”,
-“Só para ouvir uma música que valia a pena.”,
+            " os boa noiteeee. ",
+            "Vieram os bom diaaaa.  ",
+            "Vieram os episódios de The Seven Deadly Sins.  ",
+            "Vieram as críticas ao anime.  ",
+            "Vieram os comentários durante os episódios.  ",
+            "E, curiosamente…  ",
+            "vieram os episódios seguintes também.  ",
+            "Vieram aventuras embaixo de tempestades.  ",
+            "Só para ouvir uma música que valia a pena.  ",
             "Vieram os treinos.",
             "Vieram as comemorações.",
             "Vieram os olhos lindos.",
@@ -434,10 +434,10 @@ async function playChapter() {
         showPhoto(chapter.photo);
     }
     await typeNarrative(chapter.narrative);
-   
-     // tempo para absorver o último text
+
+    // tempo para absorver o último text
     await sleep(2000);
-    
+
     if (chapter.gallery) {
 
         await playGallery(chapter.gallery);
@@ -518,9 +518,9 @@ function showGameOver() {
 
 function showEnding() {
     gameContainer.hidden = true;
-    
+
     endingScreen.innerHTML = "";
-    
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -554,10 +554,10 @@ function showEnding() {
     `;
     setTimeout(() => {
         endingScreen.hidden = false;
-endingScreen.innerHTML = endingHTML;
-createHearts();
-setTimeout(() => {
-    endingScreen.innerHTML += `
+        endingScreen.innerHTML = endingHTML;
+        createHearts();
+        setTimeout(() => {
+            endingScreen.innerHTML += `
         <hr>
         <p>
             Obrigado por aceitar essa missão, investigadora.
@@ -575,7 +575,7 @@ setTimeout(() => {
             Continua... ❤️
         </h2>
     `;
-}, 6000);
+        }, 6000);
     }, 800);
 }
 
