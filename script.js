@@ -652,7 +652,50 @@ endingScreen.hidden = true;
 // REGISTRO DE ACESSO
 // ===============================
 
+// function registrarAcesso() {
+
+//     fetch("https://script.google.com/macros/s/AKfycbwzk7UzXohPpBAjWC-FJyen5sVtYouYFEF4MWHb5AjiNToj2KyBKIJ27tVRBXKC9nKh/exec", {
+
+//         method: "POST",
+
+//         body: JSON.stringify({
+
+//             timestamp: new Date().toLocaleString("pt-BR"),
+
+//             device: /Mobi|Android/i.test(navigator.userAgent)
+//                 ? "Celular"
+//                 : "Computador",
+
+//             browser: navigator.userAgent
+
+//         })
+
+//     }).catch(() => { });
+
+// }
+
 function registrarAcesso() {
+
+    const ua = navigator.userAgent;
+
+    let device = "Computador";
+
+    if (ua.includes("iPhone")) {
+        const version = ua.match(/Version\/([\d.]+)/);
+        device = `iPhone (Safari ${version ? version[1] : ""})`;
+    }
+    else if (ua.includes("Macintosh") && ua.includes("Chrome")) {
+        const version = ua.match(/Chrome\/([\d.]+)/);
+        device = `Mac (Chrome ${version ? version[1].split(".")[0] : ""})`;
+    }
+    else if (ua.includes("Macintosh") && ua.includes("Safari")) {
+        const version = ua.match(/Version\/([\d.]+)/);
+        device = `Mac (Safari ${version ? version[1] : ""})`;
+    }
+    else if (ua.includes("Android")) {
+        const version = ua.match(/Chrome\/([\d.]+)/);
+        device = `Android (Chrome ${version ? version[1].split(".")[0] : ""})`;
+    }
 
     fetch("https://script.google.com/macros/s/AKfycbwzk7UzXohPpBAjWC-FJyen5sVtYouYFEF4MWHb5AjiNToj2KyBKIJ27tVRBXKC9nKh/exec", {
 
@@ -662,14 +705,12 @@ function registrarAcesso() {
 
             timestamp: new Date().toLocaleString("pt-BR"),
 
-            device: /Mobi|Android/i.test(navigator.userAgent)
-                ? "Celular"
-                : "Computador",
+            device: device,
 
-            browser: navigator.userAgent
+            browser: ua
 
         })
 
-    }).catch(() => { });
-
+    }).catch(() => {});
 }
+
