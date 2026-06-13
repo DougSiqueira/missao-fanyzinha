@@ -147,9 +147,15 @@ body {
     border: 3px solid rgba(255,255,255,0.08);
 
     box-shadow:
-        0 0 30px rgba(0,0,0,0.4);
+    0 12px 35px rgba(0,0,0,0.45);
+
+    transition: transform 0.4s ease;
 
     animation: fadeIn 0.8s ease;
+}
+
+#chapter-photo:hover {
+    transform: scale(1.02);
 }
 
 /* ===============================
@@ -235,7 +241,24 @@ button:active {
         0 0 30px rgba(255, 215, 0, 0.35);
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
     animation: achievementPop 0.4s ease;
+}
+#achievement[hidden] {
+    display: none !important;
+}
+
+#achievement::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: -1;
 }
 
 /* ===============================
@@ -314,6 +337,11 @@ button:active {
 ================================= */
 
 @media (max-width: 600px) {
+    
+    #achievement {
+        width: 90%;
+        font-size: 1rem;
+    }
 
     #intro-screen h1 {
         font-size: 2.2rem;
